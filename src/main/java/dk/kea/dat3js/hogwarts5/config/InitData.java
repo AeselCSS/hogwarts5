@@ -1,17 +1,15 @@
 package dk.kea.dat3js.hogwarts5.config;
 
+import dk.kea.dat3js.hogwarts5.house.House;
 import dk.kea.dat3js.hogwarts5.house.HouseRepository;
 import dk.kea.dat3js.hogwarts5.students.Student;
 import dk.kea.dat3js.hogwarts5.students.StudentRepository;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
-import dk.kea.dat3js.hogwarts5.house.House;
 
-import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
 
 @Component
 public class InitData implements CommandLineRunner {
@@ -44,9 +42,9 @@ public class InitData implements CommandLineRunner {
     Student george = new Student("George", "Fabian", "Weasley", gryffindor, 5);
     Student percy = new Student("Percy", "Ignatius", "Weasley", gryffindor, 5);
 
-    Student draco = new Student("Draco", "", "Malfoy", slytherin, 5);
-    Student cedric = new Student("Cedric", "", "Diggory", hufflepuff, 6);
-    Student luna = new Student("Luna", "", "Lovegood", ravenclaw, 4);
+    Student draco = new Student("Draco", "Malfoy", slytherin, 5);
+    Student cedric = new Student("Cedric", "Diggory", hufflepuff, 6);
+    Student luna = new Student("Luna", "Lovegood", ravenclaw, 4);
 
     existingStudents.addAll(List.of(harry, hermione, ron, neville, ginny, fred, george, percy, draco, cedric, luna));
     studentRepository.saveAll(existingStudents);
