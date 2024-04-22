@@ -30,8 +30,7 @@ public class InitData implements CommandLineRunner {
 
   private void createStudents() {
     // To avoid creating and re-creating the same students, we first get all those that already exist
-    Set<Student> existingStudents = new HashSet<>();
-    existingStudents.addAll(studentRepository.findAll());
+    Set<Student> existingStudents = new HashSet<>(studentRepository.findAll());
 
     Student harry = new Student("Harry", "James", "Potter", gryffindor, 5);
     Student hermione = new Student("Hermione", "Jean", "Granger", gryffindor, 5);
